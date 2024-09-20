@@ -1,6 +1,6 @@
 # README
 
-surrealpy is another Python tool for working with [SurrealDB](https://docs.surrealdb.com/docs/intro) v2.x.
+surrealpy is another Python tool for working with [SurrealDB](https://surrealdb.com) v2.x.
 
 It is **asynchronous** and **unofficial**, so if you need an
   - Official client, go [here](https://github.com/surrealdb/surrealdb.py). But the current release v0.3.2 is not really usable in async environments [Bug: Concurrency issues](https://github.com/surrealdb/surrealdb.py/issues/101)
@@ -31,4 +31,4 @@ This is a very rough release, it works for me (python 3.12 on macos) but needs t
 
 Via pip:
 
-`pip install surrealpy`.
+`pip install 'git+https://github.com/Anton-2/surrealpy.git'`.
