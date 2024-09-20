@@ -1,0 +1,54 @@
+[project]
+name = "surrealpy"
+version = "0.1.0"
+description = "Async python client for SurrealDB"
+authors = [{ name = "Antonin ENFRUN", email = "antonin@tooloa.fr" }]
+dependencies = ["cbor2>=5.6.4", "websockets>=13.0.1"]
+requires-python = ">=3.12"
+readme = "README.md"
+license = { text = "MIT" }
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.dev-dependencies]
+dev = ["ruff>=0.6.6", "pytest>=8.3.3", "pytest-aio>=1.9.0"]
+
+[tool.pdm.scripts]
+format = "ruff format"
+check = "ruff check --fix"
+clean = { composite = ["check", "format"] }
+
+
+[tool.ruff]
+extend-include = ["*.ipynb"]
+builtins = ["_"]
+line-length = 132
+src = ["src", "test"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    # "UP",
+    # flake8-bugbear
+    # "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+[tool.pyright]
+venvPath = ".venv"
+venv = "."
